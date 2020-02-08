@@ -27,8 +27,8 @@ Spring Boot Application that demonstrates REST API Development using Spring Data
 
 # Database Configuration
 
-1. spring.datasource.url=jdbc:postgresql://localhost:5432/flightsbookingsystem.
-2. spring.datasource.username=postgres.
-3. spring.datasource.password=postgres.
+1. schema: flightsbookingsystem.
+2. username: postgres.
+3. password: postgres.
 
 # The Project Can be runned using maven commands.
