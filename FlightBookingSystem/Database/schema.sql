@@ -1,63 +1,41 @@
-DROP TABLE IF EXISTS Customer;
-CREATE TABLE Customer
+DROP TABLE IF EXISTS customer cascade;
+CREATE TABLE customer
 (
-    customerID     	serial,
+    id     	serial,
     firstName       VARCHAR(45),
     lastName        VARCHAR(45),
     email           VARCHAR(45),
-    password        VARCHAR(45),
-    age             INT,
+    password        VARCHAR(45)
 
-    PRIMARY KEY(customerID)
+    PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS Airport;
-CREATE TABLE Airport
+DROP TABLE IF EXISTS flight cascade;
+CREATE TABLE flight
 (
-    code	      	VARCHAR(45),
-    name         	VARCHAR(45),
-    city         	VARCHAR(45),
-    country         VARCHAR(45), 
-    PRIMARY KEY(code)
-);
-
-DROP TABLE IF EXISTS Flight;
-CREATE TABLE Flight
-(
-    flightID        Serial,
-	departurePortCode VARCHAR(45),
-	arrivalPortCode  VARCHAR(45),
-    departureTime   TIME DEFAULT '00:00:00',
-    departureDate   DATE ,
-    arrivalTime     TIME DEFAULT '00:00:00',
-    arrivalDate     DATE,
-	flightClass     VARCHAR(45),
-	flightPrice     VARCHAR(45),
+    id        Serial,
+	departure_city VARCHAR(45),
+	arrival_city  VARCHAR(45),
+    departure_date   VARCHAR(45) ,
+    arrival_date     VARCHAR(45),
+	buissness_class_fare    varchar(45),
+	economic_class_fare     varchar(45),
     updatedAt		TIMESTAMP DEFAULT 'now'::timestamp,
-    PRIMARY KEY(flightID),
-	FOREIGN KEY(departurePortCode) REFERENCES Airport(code) 
+    PRIMARY KEY(id)
+);
+
+DROP TABLE IF EXISTS reservation cascade;
+CREATE TABLE Reservation
+(
+    id   serial,
+    flightID        int,
+	customerID     		int,
+    flight_class     VARCHAR(45),
+    updatedAT      TIMESTAMP DEFAULT 'now'::timestamp,
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(flightID) REFERENCES Flight(id) 
     ON DELETE CASCADE,
-	FOREIGN KEY(arrivalPortCode) REFERENCES Airport(code) 
+    FOREIGN KEY(customerID) REFERENCES customer(id)
     ON DELETE CASCADE
 );
-
-
-
-DROP TABLE IF EXISTS Booking;
-CREATE TABLE Booking
-(
-    ticketID        serial,
-    flightID        INT,
-    seatNum         VARCHAR(45),
-    class           VARCHAR(45),
-    customerID     		INT,
-    updatedAt		TIMESTAMP DEFAULT 'now'::timestamp,
-    
-    
-    PRIMARY KEY(ticketID),
-    FOREIGN KEY(flightID) REFERENCES Flight(flightID) 
-    ON DELETE CASCADE,
-    FOREIGN KEY(customerID) REFERENCES Customer(customerID)
-    ON DELETE CASCADE
-);
-
