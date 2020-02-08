@@ -5,7 +5,7 @@ CREATE TABLE customer
     firstName       VARCHAR(45),
     lastName        VARCHAR(45),
     email           VARCHAR(45),
-    password        VARCHAR(45)
+    password        VARCHAR(45),
 
     PRIMARY KEY(id)
 );
@@ -16,8 +16,8 @@ CREATE TABLE flight
     id        Serial,
 	departure_city VARCHAR(45),
 	arrival_city  VARCHAR(45),
-    departure_date   VARCHAR(45) ,
-    arrival_date     VARCHAR(45),
+    departure_date   DATE,
+    arrival_date     DATE,
 	buissness_class_fare    varchar(45),
 	economic_class_fare     varchar(45),
     updatedAt		TIMESTAMP DEFAULT 'now'::timestamp,
