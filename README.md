@@ -1,5 +1,5 @@
 # Flight-Booking-System
-SpringBoot Application that demonstrates REST API Development using Spring Data JPA using Java 8 features
+Spring Boot Application that demonstrates REST API Development using Spring Data JPA.
 # Features
 1] Flights CRUD operations:
 1. Create Flight.
