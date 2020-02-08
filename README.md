@@ -29,7 +29,8 @@ Spring Boot Application that demonstrates REST API Development using Spring Data
 3. Spring Data JPA (Data persistence).
 4. Spring Rest (Building RESTful api).
 4. Postgresql (database).
-5. Postman (testing endpoints).
+5. PgAdmin (database Framework)
+6. Postman (testing apis).
 
 # Database Configuration
 http://localhost:8080/postgresinfo
