@@ -1,7 +1,7 @@
 # Flight-Booking-System
 Spring Boot Application that demonstrates REST API Development using Spring Data JPA.
 # Features
-1] Flights CRUD operations:
+1] Flights CRUD operations: 
 1. Create Flight.
 2. Read flights(all, by Id, given certain locations).
 3. Update Flights.
@@ -10,12 +10,18 @@ Spring Boot Application that demonstrates REST API Development using Spring Data
 2] Customer CRUD Operations.
 
 3]Reservation CRUD Operations.
+
 1. Create Reservation given Flight ID, Customer ID, Flgiht Class.
 2. Read Reservations
 3. Update Reservation Class.
 4. Delete Reservation.
 
 # Screenshots Available in Screenshots Folder and Database schema in Database Folder.
+
+# Links
+1. http://localhost:8080/flights
+2. http://localhost:8080/reservations
+3. http://localhost:8080/customers
 
 # Technologies Used
 1. Java (Programming Language).
@@ -26,9 +32,8 @@ Spring Boot Application that demonstrates REST API Development using Spring Data
 5. Postman (testing endpoints).
 
 # Database Configuration
+http://localhost:8080/postgresinfo
 
 1. schema: flightsbookingsystem.
 2. username: postgres.
 3. password: postgres.
-
-# The Project Can be runned using maven commands.
