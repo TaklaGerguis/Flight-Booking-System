@@ -1,5 +1,7 @@
 package com.brightskies.FlightBookingSystem.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,10 +26,10 @@ public class Flight {
 	
 	
 	@Column(name="departure_date")
-	private String departureDate;
+	private Date departureDate;
 	
 	@Column(name="arrival_date")
-	private String arrivalDate;
+	private Date arrivalDate;
 	
 	@Column(name="buissness_class_fare")
 	private String buissnessClassFare;
@@ -39,8 +41,8 @@ public class Flight {
 		
 	}
 	
-	public Flight(String departureCity, String arrivalCity, String departureDate,
-			 String arrivalDate, String buissnessClassFare, String economicClassFare) {
+	public Flight(String departureCity, String arrivalCity, Date departureDate,
+			 Date arrivalDate, String buissnessClassFare, String economicClassFare) {
 		this.departureCity = departureCity;
 		this.arrivalCity = arrivalCity;
 		this.departureDate = departureDate;
@@ -73,19 +75,19 @@ public class Flight {
 		this.arrivalCity = arrivalCity;
 	}
 
-	public String getDepartureDate() {
+	public Date getDepartureDate() {
 		return departureDate;
 	}
 
-	public void setDepartureDate(String departureDate) {
+	public void setDepartureDate(Date departureDate) {
 		this.departureDate = departureDate;
 	}
 
-	public String getArrivalDate() {
+	public Date getArrivalDate() {
 		return arrivalDate;
 	}
 
-	public void setArrivalDate(String arrivalDate) {
+	public void setArrivalDate(Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
@@ -110,8 +112,5 @@ public class Flight {
 		return "Flight [id=" + id + ", departureCity=" + departureCity + ", arrivalCity=" + arrivalCity
 				+ ", departureDate=" + departureDate + ", arrivalDate=" + arrivalDate + ", buissnessClassFare="
 				+ buissnessClassFare + ", economicClassFare=" + economicClassFare + "]";
-	}
-
-
-		
+	}		
 }
